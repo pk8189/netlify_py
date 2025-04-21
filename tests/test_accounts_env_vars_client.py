@@ -27,7 +27,7 @@ def test_update_200_success_default():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.env.update(account_id="string", key_path="string")
+    response = client.accounts.env_vars.update(account_id="string", key_path="string")
     try:
         pydantic.TypeAdapter(models.EnvVar).validate_python(response)
         is_json = True
@@ -57,7 +57,9 @@ async def test_await_update_200_success_default():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.env.update(account_id="string", key_path="string")
+    response = await client.accounts.env_vars.update(
+        account_id="string", key_path="string"
+    )
     try:
         pydantic.TypeAdapter(models.EnvVar).validate_python(response)
         is_json = True
@@ -86,7 +88,7 @@ def test_create_201_success_default():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.env.create(account_id="string", data=[{}])
+    response = client.accounts.env_vars.create(account_id="string", data=[{}])
     try:
         pydantic.TypeAdapter(typing.List[models.EnvVar]).validate_python(response)
         is_json = True
@@ -116,7 +118,7 @@ async def test_await_create_201_success_default():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.env.create(account_id="string", data=[{}])
+    response = await client.accounts.env_vars.create(account_id="string", data=[{}])
     try:
         pydantic.TypeAdapter(typing.List[models.EnvVar]).validate_python(response)
         is_json = True
@@ -145,7 +147,7 @@ def test_set_201_success_default():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.env.set(account_id="string", key="string")
+    response = client.accounts.env_vars.set(account_id="string", key="string")
     try:
         pydantic.TypeAdapter(models.EnvVar).validate_python(response)
         is_json = True
@@ -175,7 +177,7 @@ async def test_await_set_201_success_default():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.env.set(account_id="string", key="string")
+    response = await client.accounts.env_vars.set(account_id="string", key="string")
     try:
         pydantic.TypeAdapter(models.EnvVar).validate_python(response)
         is_json = True
@@ -204,7 +206,7 @@ def test_get_200_generated_success():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.env.get(account_id="string", key="string")
+    response = client.accounts.env_vars.get(account_id="string", key="string")
     try:
         pydantic.TypeAdapter(models.EnvVar).validate_python(response)
         is_json = True
@@ -234,7 +236,7 @@ async def test_await_get_200_generated_success():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.env.get(account_id="string", key="string")
+    response = await client.accounts.env_vars.get(account_id="string", key="string")
     try:
         pydantic.TypeAdapter(models.EnvVar).validate_python(response)
         is_json = True
@@ -263,7 +265,7 @@ def test_list_200_generated_success():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.env.list(account_id="string")
+    response = client.accounts.env_vars.list(account_id="string")
     try:
         pydantic.TypeAdapter(typing.List[models.EnvVar]).validate_python(response)
         is_json = True
@@ -293,7 +295,7 @@ async def test_await_list_200_generated_success():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.env.list(account_id="string")
+    response = await client.accounts.env_vars.list(account_id="string")
     try:
         pydantic.TypeAdapter(typing.List[models.EnvVar]).validate_python(response)
         is_json = True
@@ -322,7 +324,7 @@ def test_delete_value_204_generated_success():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.env.delete_value(
+    response = client.accounts.env_vars.delete_value(
         account_id="string", id="string", key="string"
     )
     assert response is None
@@ -349,7 +351,7 @@ async def test_await_delete_value_204_generated_success():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.env.delete_value(
+    response = await client.accounts.env_vars.delete_value(
         account_id="string", id="string", key="string"
     )
     assert response is None
@@ -375,7 +377,7 @@ def test_delete_204_generated_success():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.env.delete(account_id="string", key="string")
+    response = client.accounts.env_vars.delete(account_id="string", key="string")
     assert response is None
 
 
@@ -400,5 +402,5 @@ async def test_await_delete_204_generated_success():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.env.delete(account_id="string", key="string")
+    response = await client.accounts.env_vars.delete(account_id="string", key="string")
     assert response is None

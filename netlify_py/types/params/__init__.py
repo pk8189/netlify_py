@@ -8,14 +8,17 @@ from .account_update_member_setup import (
     _SerializerAccountUpdateMemberSetup,
 )
 from .account_update_setup import AccountUpdateSetup, _SerializerAccountUpdateSetup
-from .accounts_env_create_body_item import (
-    AccountsEnvCreateBodyItem,
-    _SerializerAccountsEnvCreateBodyItem,
+from .accounts_env_vars_create_body_item import (
+    AccountsEnvVarsCreateBodyItem,
+    _SerializerAccountsEnvVarsCreateBodyItem,
 )
-from .accounts_env_set_body import AccountsEnvSetBody, _SerializerAccountsEnvSetBody
-from .accounts_env_update_body import (
-    AccountsEnvUpdateBody,
-    _SerializerAccountsEnvUpdateBody,
+from .accounts_env_vars_set_body import (
+    AccountsEnvVarsSetBody,
+    _SerializerAccountsEnvVarsSetBody,
+)
+from .accounts_env_vars_update_body import (
+    AccountsEnvVarsUpdateBody,
+    _SerializerAccountsEnvVarsUpdateBody,
 )
 from .build_hook_setup import BuildHookSetup, _SerializerBuildHookSetup
 from .build_setup import BuildSetup, _SerializerBuildSetup
@@ -87,9 +90,9 @@ __all__ = [
     "AccountSetup",
     "AccountUpdateMemberSetup",
     "AccountUpdateSetup",
-    "AccountsEnvCreateBodyItem",
-    "AccountsEnvSetBody",
-    "AccountsEnvUpdateBody",
+    "AccountsEnvVarsCreateBodyItem",
+    "AccountsEnvVarsSetBody",
+    "AccountsEnvVarsUpdateBody",
     "BuildHookSetup",
     "BuildSetup",
     "Deploy",
@@ -124,9 +127,9 @@ __all__ = [
     "_SerializerAccountSetup",
     "_SerializerAccountUpdateMemberSetup",
     "_SerializerAccountUpdateSetup",
-    "_SerializerAccountsEnvCreateBodyItem",
-    "_SerializerAccountsEnvSetBody",
-    "_SerializerAccountsEnvUpdateBody",
+    "_SerializerAccountsEnvVarsCreateBodyItem",
+    "_SerializerAccountsEnvVarsSetBody",
+    "_SerializerAccountsEnvVarsUpdateBody",
     "_SerializerBuildHookSetup",
     "_SerializerBuildSetup",
     "_SerializerDeploy",

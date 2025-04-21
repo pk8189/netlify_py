@@ -9,7 +9,7 @@ from netlify_py.core import (
 from netlify_py.types import models
 
 
-class TypesClient:
+class AccountTypesClient:
     def __init__(self, *, base_client: SyncBaseClient):
         self._base_client = base_client
 
@@ -31,7 +31,7 @@ class TypesClient:
 
         Examples:
         ```py
-        client.accounts.types.list()
+        client.accounts.account_types.list()
         ```
         """
         return self._base_client.request(
@@ -43,7 +43,7 @@ class TypesClient:
         )
 
 
-class AsyncTypesClient:
+class AsyncAccountTypesClient:
     def __init__(self, *, base_client: AsyncBaseClient):
         self._base_client = base_client
 
@@ -65,7 +65,7 @@ class AsyncTypesClient:
 
         Examples:
         ```py
-        await client.accounts.types.list()
+        await client.accounts.account_types.list()
         ```
         """
         return await self._base_client.request(

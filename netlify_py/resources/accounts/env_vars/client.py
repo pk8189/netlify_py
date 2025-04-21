@@ -14,7 +14,7 @@ from netlify_py.core import (
 from netlify_py.types import models, params
 
 
-class EnvClient:
+class EnvVarsClient:
     def __init__(self, *, base_client: SyncBaseClient):
         self._base_client = base_client
 
@@ -48,7 +48,7 @@ class EnvClient:
 
         Examples:
         ```py
-        client.accounts.env.delete(account_id="string", key="string")
+        client.accounts.env_vars.delete(account_id="string", key="string")
         ```
         """
         _query: QueryParams = {}
@@ -101,7 +101,9 @@ class EnvClient:
 
         Examples:
         ```py
-        client.accounts.env.delete_value(account_id="string", id="string", key="string")
+        client.accounts.env_vars.delete_value(
+            account_id="string", id="string", key="string"
+        )
         ```
         """
         _query: QueryParams = {}
@@ -168,7 +170,7 @@ class EnvClient:
 
         Examples:
         ```py
-        client.accounts.env.list(account_id="string")
+        client.accounts.env_vars.list(account_id="string")
         ```
         """
         _query: QueryParams = {}
@@ -245,7 +247,7 @@ class EnvClient:
 
         Examples:
         ```py
-        client.accounts.env.get(account_id="string", key="string")
+        client.accounts.env_vars.get(account_id="string", key="string")
         ```
         """
         _query: QueryParams = {}
@@ -318,7 +320,7 @@ class EnvClient:
 
         Examples:
         ```py
-        client.accounts.env.set(account_id="string", key="string")
+        client.accounts.env_vars.set(account_id="string", key="string")
         ```
         """
         _query: QueryParams = {}
@@ -336,7 +338,7 @@ class EnvClient:
                 "context_parameter": context_parameter,
                 "value": value,
             },
-            dump_with=params._SerializerAccountsEnvSetBody,
+            dump_with=params._SerializerAccountsEnvVarsSetBody,
         )
         return self._base_client.request(
             method="PATCH",
@@ -352,7 +354,7 @@ class EnvClient:
         self,
         *,
         account_id: str,
-        data: typing.List[params.AccountsEnvCreateBodyItem],
+        data: typing.List[params.AccountsEnvVarsCreateBodyItem],
         site_id: typing.Union[
             typing.Optional[str], type_utils.NotGiven
         ] = type_utils.NOT_GIVEN,
@@ -366,7 +368,7 @@ class EnvClient:
         Args:
             site_id: If provided, create an environment variable on the site level, not the account level
             account_id: Scope response to account_id
-            data: typing.List[AccountsEnvCreateBodyItem]
+            data: typing.List[AccountsEnvVarsCreateBodyItem]
             request_options: Additional options to customize the HTTP request
 
         Returns:
@@ -378,7 +380,7 @@ class EnvClient:
 
         Examples:
         ```py
-        client.accounts.env.create(account_id="string", data=[{}])
+        client.accounts.env_vars.create(account_id="string", data=[{}])
         ```
         """
         _query: QueryParams = {}
@@ -392,7 +394,7 @@ class EnvClient:
             )
         _json = to_encodable(
             item=data,
-            dump_with=typing.List[params._SerializerAccountsEnvCreateBodyItem],
+            dump_with=typing.List[params._SerializerAccountsEnvVarsCreateBodyItem],
         )
         return self._base_client.request(
             method="POST",
@@ -457,7 +459,7 @@ class EnvClient:
 
         Examples:
         ```py
-        client.accounts.env.update(account_id="string", key_path="string")
+        client.accounts.env_vars.update(account_id="string", key_path="string")
         ```
         """
         _query: QueryParams = {}
@@ -476,7 +478,7 @@ class EnvClient:
                 "scopes": scopes,
                 "values": values,
             },
-            dump_with=params._SerializerAccountsEnvUpdateBody,
+            dump_with=params._SerializerAccountsEnvVarsUpdateBody,
         )
         return self._base_client.request(
             method="PUT",
@@ -489,7 +491,7 @@ class EnvClient:
         )
 
 
-class AsyncEnvClient:
+class AsyncEnvVarsClient:
     def __init__(self, *, base_client: AsyncBaseClient):
         self._base_client = base_client
 
@@ -523,7 +525,7 @@ class AsyncEnvClient:
 
         Examples:
         ```py
-        await client.accounts.env.delete(account_id="string", key="string")
+        await client.accounts.env_vars.delete(account_id="string", key="string")
         ```
         """
         _query: QueryParams = {}
@@ -576,7 +578,7 @@ class AsyncEnvClient:
 
         Examples:
         ```py
-        await client.accounts.env.delete_value(
+        await client.accounts.env_vars.delete_value(
             account_id="string", id="string", key="string"
         )
         ```
@@ -645,7 +647,7 @@ class AsyncEnvClient:
 
         Examples:
         ```py
-        await client.accounts.env.list(account_id="string")
+        await client.accounts.env_vars.list(account_id="string")
         ```
         """
         _query: QueryParams = {}
@@ -722,7 +724,7 @@ class AsyncEnvClient:
 
         Examples:
         ```py
-        await client.accounts.env.get(account_id="string", key="string")
+        await client.accounts.env_vars.get(account_id="string", key="string")
         ```
         """
         _query: QueryParams = {}
@@ -795,7 +797,7 @@ class AsyncEnvClient:
 
         Examples:
         ```py
-        await client.accounts.env.set(account_id="string", key="string")
+        await client.accounts.env_vars.set(account_id="string", key="string")
         ```
         """
         _query: QueryParams = {}
@@ -813,7 +815,7 @@ class AsyncEnvClient:
                 "context_parameter": context_parameter,
                 "value": value,
             },
-            dump_with=params._SerializerAccountsEnvSetBody,
+            dump_with=params._SerializerAccountsEnvVarsSetBody,
         )
         return await self._base_client.request(
             method="PATCH",
@@ -829,7 +831,7 @@ class AsyncEnvClient:
         self,
         *,
         account_id: str,
-        data: typing.List[params.AccountsEnvCreateBodyItem],
+        data: typing.List[params.AccountsEnvVarsCreateBodyItem],
         site_id: typing.Union[
             typing.Optional[str], type_utils.NotGiven
         ] = type_utils.NOT_GIVEN,
@@ -843,7 +845,7 @@ class AsyncEnvClient:
         Args:
             site_id: If provided, create an environment variable on the site level, not the account level
             account_id: Scope response to account_id
-            data: typing.List[AccountsEnvCreateBodyItem]
+            data: typing.List[AccountsEnvVarsCreateBodyItem]
             request_options: Additional options to customize the HTTP request
 
         Returns:
@@ -855,7 +857,7 @@ class AsyncEnvClient:
 
         Examples:
         ```py
-        await client.accounts.env.create(account_id="string", data=[{}])
+        await client.accounts.env_vars.create(account_id="string", data=[{}])
         ```
         """
         _query: QueryParams = {}
@@ -869,7 +871,7 @@ class AsyncEnvClient:
             )
         _json = to_encodable(
             item=data,
-            dump_with=typing.List[params._SerializerAccountsEnvCreateBodyItem],
+            dump_with=typing.List[params._SerializerAccountsEnvVarsCreateBodyItem],
         )
         return await self._base_client.request(
             method="POST",
@@ -934,7 +936,7 @@ class AsyncEnvClient:
 
         Examples:
         ```py
-        await client.accounts.env.update(account_id="string", key_path="string")
+        await client.accounts.env_vars.update(account_id="string", key_path="string")
         ```
         """
         _query: QueryParams = {}
@@ -953,7 +955,7 @@ class AsyncEnvClient:
                 "scopes": scopes,
                 "values": values,
             },
-            dump_with=params._SerializerAccountsEnvUpdateBody,
+            dump_with=params._SerializerAccountsEnvVarsUpdateBody,
         )
         return await self._base_client.request(
             method="PUT",

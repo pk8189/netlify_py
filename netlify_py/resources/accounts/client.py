@@ -9,17 +9,20 @@ from netlify_py.core import (
     to_encodable,
     type_utils,
 )
+from netlify_py.resources.accounts.account_types import (
+    AccountTypesClient,
+    AsyncAccountTypesClient,
+)
 from netlify_py.resources.accounts.audit import AsyncAuditClient, AuditClient
-from netlify_py.resources.accounts.env import AsyncEnvClient, EnvClient
-from netlify_py.resources.accounts.types import AsyncTypesClient, TypesClient
+from netlify_py.resources.accounts.env_vars import AsyncEnvVarsClient, EnvVarsClient
 from netlify_py.types import models, params
 
 
 class AccountsClient:
     def __init__(self, *, base_client: SyncBaseClient):
         self._base_client = base_client
-        self.env = EnvClient(base_client=self._base_client)
-        self.types = TypesClient(base_client=self._base_client)
+        self.env_vars = EnvVarsClient(base_client=self._base_client)
+        self.account_types = AccountTypesClient(base_client=self._base_client)
         self.audit = AuditClient(base_client=self._base_client)
 
     def cancel(
@@ -254,8 +257,8 @@ class AccountsClient:
 class AsyncAccountsClient:
     def __init__(self, *, base_client: AsyncBaseClient):
         self._base_client = base_client
-        self.env = AsyncEnvClient(base_client=self._base_client)
-        self.types = AsyncTypesClient(base_client=self._base_client)
+        self.env_vars = AsyncEnvVarsClient(base_client=self._base_client)
+        self.account_types = AsyncAccountTypesClient(base_client=self._base_client)
         self.audit = AsyncAuditClient(base_client=self._base_client)
 
     async def cancel(

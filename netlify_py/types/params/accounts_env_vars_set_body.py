@@ -3,9 +3,9 @@ import typing
 import typing_extensions
 
 
-class AccountsEnvSetBody(typing_extensions.TypedDict):
+class AccountsEnvVarsSetBody(typing_extensions.TypedDict):
     """
-    AccountsEnvSetBody
+    AccountsEnvVarsSetBody
     """
 
     context: typing_extensions.NotRequired[
@@ -28,9 +28,9 @@ class AccountsEnvSetBody(typing_extensions.TypedDict):
     """
 
 
-class _SerializerAccountsEnvSetBody(pydantic.BaseModel):
+class _SerializerAccountsEnvVarsSetBody(pydantic.BaseModel):
     """
-    Serializer for AccountsEnvSetBody handling case conversions
+    Serializer for AccountsEnvVarsSetBody handling case conversions
     and file omissions as dictated by the API
     """
 

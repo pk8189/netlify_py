@@ -13,7 +13,7 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.types.list()
+res = client.accounts.account_types.list()
 ```
 
 #### Asynchronous Client
@@ -23,5 +23,5 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.types.list()
+res = await client.accounts.account_types.list()
 ```

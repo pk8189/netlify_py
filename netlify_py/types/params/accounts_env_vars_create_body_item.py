@@ -5,9 +5,9 @@ import typing_extensions
 from .env_var_value import EnvVarValue, _SerializerEnvVarValue
 
 
-class AccountsEnvUpdateBody(typing_extensions.TypedDict):
+class AccountsEnvVarsCreateBodyItem(typing_extensions.TypedDict):
     """
-    AccountsEnvUpdateBody
+    AccountsEnvVarsCreateBodyItem
     """
 
     is_secret: typing_extensions.NotRequired[bool]
@@ -34,9 +34,9 @@ class AccountsEnvUpdateBody(typing_extensions.TypedDict):
     values: typing_extensions.NotRequired[typing.List[EnvVarValue]]
 
 
-class _SerializerAccountsEnvUpdateBody(pydantic.BaseModel):
+class _SerializerAccountsEnvVarsCreateBodyItem(pydantic.BaseModel):
     """
-    Serializer for AccountsEnvUpdateBody handling case conversions
+    Serializer for AccountsEnvVarsCreateBodyItem handling case conversions
     and file omissions as dictated by the API
     """
 

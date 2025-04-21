@@ -27,7 +27,7 @@ def test_list_200_generated_success():
     """
     # tests calling sync method with example data
     client = Client(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = client.accounts.types.list()
+    response = client.accounts.account_types.list()
     try:
         pydantic.TypeAdapter(typing.List[models.AccountType]).validate_python(response)
         is_json = True
@@ -57,7 +57,7 @@ async def test_await_list_200_generated_success():
     """
     # tests calling async method with example data
     client = AsyncClient(token="API_TOKEN", environment=Environment.MOCK_SERVER)
-    response = await client.accounts.types.list()
+    response = await client.accounts.account_types.list()
     try:
         pydantic.TypeAdapter(typing.List[models.AccountType]).validate_python(response)
         is_json = True

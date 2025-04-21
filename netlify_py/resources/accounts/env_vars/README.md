@@ -13,7 +13,7 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.env.delete(account_id="string", key="string")
+res = client.accounts.env_vars.delete(account_id="string", key="string")
 ```
 
 #### Asynchronous Client
@@ -23,7 +23,7 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.env.delete(account_id="string", key="string")
+res = await client.accounts.env_vars.delete(account_id="string", key="string")
 ```
 
 ### delete_value <a name="delete_value"></a>
@@ -40,7 +40,9 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.env.delete_value(account_id="string", id="string", key="string")
+res = client.accounts.env_vars.delete_value(
+    account_id="string", id="string", key="string"
+)
 ```
 
 #### Asynchronous Client
@@ -50,7 +52,7 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.env.delete_value(
+res = await client.accounts.env_vars.delete_value(
     account_id="string", id="string", key="string"
 )
 ```
@@ -69,7 +71,7 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.env.list(account_id="string")
+res = client.accounts.env_vars.list(account_id="string")
 ```
 
 #### Asynchronous Client
@@ -79,7 +81,7 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.env.list(account_id="string")
+res = await client.accounts.env_vars.list(account_id="string")
 ```
 
 ### get <a name="get"></a>
@@ -96,7 +98,7 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.env.get(account_id="string", key="string")
+res = client.accounts.env_vars.get(account_id="string", key="string")
 ```
 
 #### Asynchronous Client
@@ -106,7 +108,7 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.env.get(account_id="string", key="string")
+res = await client.accounts.env_vars.get(account_id="string", key="string")
 ```
 
 ### set <a name="set"></a>
@@ -123,7 +125,7 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.env.set(account_id="string", key="string")
+res = client.accounts.env_vars.set(account_id="string", key="string")
 ```
 
 #### Asynchronous Client
@@ -133,7 +135,7 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.env.set(account_id="string", key="string")
+res = await client.accounts.env_vars.set(account_id="string", key="string")
 ```
 
 ### create <a name="create"></a>
@@ -150,7 +152,7 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.env.create(account_id="string", data=[{}])
+res = client.accounts.env_vars.create(account_id="string", data=[{}])
 ```
 
 #### Asynchronous Client
@@ -160,7 +162,7 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.env.create(account_id="string", data=[{}])
+res = await client.accounts.env_vars.create(account_id="string", data=[{}])
 ```
 
 ### update <a name="update"></a>
@@ -177,7 +179,7 @@ from netlify_py import Client
 from os import getenv
 
 client = Client(token=getenv("API_TOKEN"))
-res = client.accounts.env.update(account_id="string", key_path="string")
+res = client.accounts.env_vars.update(account_id="string", key_path="string")
 ```
 
 #### Asynchronous Client
@@ -187,5 +189,5 @@ from netlify_py import AsyncClient
 from os import getenv
 
 client = AsyncClient(token=getenv("API_TOKEN"))
-res = await client.accounts.env.update(account_id="string", key_path="string")
+res = await client.accounts.env_vars.update(account_id="string", key_path="string")
 ```

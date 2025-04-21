@@ -38,23 +38,23 @@ client = AsyncClient(token=getenv("API_TOKEN"))
 * [list](netlify_py/resources/accounts/README.md#list) - GET /accounts
 * [update](netlify_py/resources/accounts/README.md#update) - PUT /accounts/{account_id}
 
+### [accounts.account_types](netlify_py/resources/accounts/account_types/README.md)
+
+* [list](netlify_py/resources/accounts/account_types/README.md#list) - GET /accounts/types
+
 ### [accounts.audit](netlify_py/resources/accounts/audit/README.md)
 
 * [list](netlify_py/resources/accounts/audit/README.md#list) - GET /accounts/{account_id}/audit
 
-### [accounts.env](netlify_py/resources/accounts/env/README.md)
+### [accounts.env_vars](netlify_py/resources/accounts/env_vars/README.md)
 
-* [create](netlify_py/resources/accounts/env/README.md#create) - POST /accounts/{account_id}/env
-* [delete](netlify_py/resources/accounts/env/README.md#delete) - DELETE /accounts/{account_id}/env/{key}
-* [delete_value](netlify_py/resources/accounts/env/README.md#delete_value) - DELETE /accounts/{account_id}/env/{key}/value/{id}
-* [get](netlify_py/resources/accounts/env/README.md#get) - GET /accounts/{account_id}/env/{key}
-* [list](netlify_py/resources/accounts/env/README.md#list) - GET /accounts/{account_id}/env
-* [set](netlify_py/resources/accounts/env/README.md#set) - PATCH /accounts/{account_id}/env/{key}
-* [update](netlify_py/resources/accounts/env/README.md#update) - PUT /accounts/{account_id}/env/{key}
-
-### [accounts.types](netlify_py/resources/accounts/types/README.md)
-
-* [list](netlify_py/resources/accounts/types/README.md#list) - GET /accounts/types
+* [create](netlify_py/resources/accounts/env_vars/README.md#create) - POST /accounts/{account_id}/env
+* [delete](netlify_py/resources/accounts/env_vars/README.md#delete) - DELETE /accounts/{account_id}/env/{key}
+* [delete_value](netlify_py/resources/accounts/env_vars/README.md#delete_value) - DELETE /accounts/{account_id}/env/{key}/value/{id}
+* [get](netlify_py/resources/accounts/env_vars/README.md#get) - GET /accounts/{account_id}/env/{key}
+* [list](netlify_py/resources/accounts/env_vars/README.md#list) - GET /accounts/{account_id}/env
+* [set](netlify_py/resources/accounts/env_vars/README.md#set) - PATCH /accounts/{account_id}/env/{key}
+* [update](netlify_py/resources/accounts/env_vars/README.md#update) - PUT /accounts/{account_id}/env/{key}
 
 ### [billing.payment_methods](netlify_py/resources/billing/payment_methods/README.md)
 
